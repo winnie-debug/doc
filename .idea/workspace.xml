@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6ee007a-9ff3-4e7e-ba99-4cb0851ea291" name="更改" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/sphinx-build.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/sphinx-build.yml" afterDir="false" />
-    </list>
+    <list default="true" id="a6ee007a-9ff3-4e7e-ba99-4cb0851ea291" name="更改" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
