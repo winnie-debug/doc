@@ -1,0 +1,103 @@
+打印参数设置
+============
+
+1. Fiber栏
+-----------
+- **FiberBasic**
+   - **Fiber line width (mm)**：纤维打印线宽（通常为1mm）
+   - **Fiber cut distance (mm)**：纤维剪切长度（取决于剪短位置到喷嘴的距离，在 T300 中为 42mm）
+   - **Fiber min feed length (mm)**：最小进给长度（当纤维路径长度小于 Fiber min feed length + Fiber cut distance 时，无法打印）
+   - **Fiber pre extrusion (mm)**：纤维预挤出长度（通常比 Fiber cut distance 大 1mm）
+   - **Fiber pre extrusion speed (mm/s)**：纤维预挤出速度（通常为 30-50mm/s）
+
+- **FiberSpeedControl**
+   - **Fiber feed speed (mm/s)**：主动段纤维打印速度（通常为 5-10mm/s）
+   - **Fiber drag speed (mm/s)**：被动段纤维打印速度（通常为 Fiber feed speed 的 50%）
+   - **Fiber slowdown threshold (mm)**：纤维减速段长度
+   - **Corner speed (mm/s)**：转角速度（通常为 0.5-1mm/s）
+
+- **FiberPrint**
+   - **Print fiber first**：纤维打印顺序，勾选后顺序为每层内先打印纤维路径，再打印塑料路径，默认开启
+   - **Fiber print only**：纯纤维打印设置，勾选后不打印塑料，只打印纤维路径
+
+- **FiberGenerate**
+   - **Fiber reinforce method**：纤维增强方式
+     - a) None：不加入纤维增强
+     - b) Concentric：根据模型轮廓生成纤维增强路径
+     - c) Zigzag：生成 Z 字形纤维增强路径
+     - d) Line：生成线形纤维增强路径
+     - e) Custom：导入自定义纤维路径
+   - **Fiber reinforce list**：纤维增强层设置（例：要在 5-10 层加入纤维，将该参数设置为 5,10）
+   - **Fiber reinforce interval**：纤维间隔增强，设置为 0 时，每个增强层均加入纤维，设置为 1 时，纤维层和塑料层交替出现
+
+- **FiberIroning**
+   - **Fiber ironing method**：纤维熨烫方法
+     - a) None：不加入纤维增强
+     - b) Follow：根据模型轮廓生成纤维增强路径
+     - c) Line：生成 Z 字形纤维增强路径
+     - d) Seam：生成线形纤维增强路径
+     - e) Custom：尚未实现
+   - **Fiber ironing speed (mm/s)**：熨烫速度
+   - **Fiber ironing zoffset (mm)**：首层熨烫高度改变。如当为 0.025，熨烫层从 0.125，0.25，0.375 变为 0.1，0.225，0.35
+
+2. Basic栏
+-----------
+- **FiberIroning**
+   - **Layer height (mm)**：层厚
+   - **Shell thickness (mm)**：壁厚，建议为喷嘴直径的整数倍（1、2、3）
+   - **Enable retraction**：回抽功能。回抽可以减少打印时的拉丝现象。
+
+- **Fill**
+   - **Bottom/Top thickness (mm)**：端面厚度。通常为层厚的整数倍。
+   - **Fill Density (%)**：内部填充的密度。通常为 40。
+
+- **Speed**
+   - **Print speed (mm/s)**：打印头的移动速度。
+
+- **Temperature**
+   - **Plastic nozzle temperature (C)**：塑料喷嘴的温度。
+   - **Fiber nozzle temperature (C)**：纤维喷嘴的温度。
+   - **Bed temperature (C)**：打印床的温度。
+
+- **Support**
+   - **Support type**：Everywhere - 这表示在整个打印对象上生成支撑结构，以帮助悬空部分的打印。
+   - **Platform adhesion type**
+     - a) None：生成 Skirt。Skirt 是一种在对象周围打印的轮廓线，用于帮助挤出机稳定和清洁喷嘴。
+     - b) Brim：边缘。它在对象周围添加一层单层厚的平坦区域，这个区域在打印完成后易于切除。
+     - c) Raft：在对象下方底座。
+
+- **Filament**
+   - **Diameter (mm)**：打印材料的直径。
+   - **Flow (%)**：材料挤出量的百分比。通常为 100。
+
+- **Machine**
+   - **Nozzle size (mm)**：塑料喷嘴的直径。
+
+3. Advanced栏
+--------------
+- **Retraction**
+   - **Speed (mm/s)**：回抽速度。
+   - **Distance (mm)**：回抽距离。这是打印头在回抽时拉回的材料长度。
+
+- **Quality**
+   - **Initial layer thickness (mm)**：第一层的厚度。
+   - **Initial layer line width (%)**：第一次的密度。通常为 100。
+   - **Cut off object bottom (mm)**：物体底部切除厚度。将对象下沉到平台中，这个功能可以用于那些底部不平整的对象，从而避免因底部接触面积过小而导致的打印问题。
+
+- **Speed**
+   - **Travel speed (mm/s)**：空驶速度。这是打印头在不挤出材料时的移动速度。
+   - **Bottom layer speed (mm/s)**：底层打印速度，单位为毫米每秒。
+   - **Infill speed (mm/s)**：填充速度。这是打印对象内部填充部分的打印速度。
+   - **Top/bottom speed (mm/s)**：顶部和底部的打印速度。
+   - **Outer shell speed (mm/s)**：外壁的打印速度。
+
+- **Cooling**
+   - **Minimal layer time (sec)**：7 - 这是打印每一层所需的最短时间，单位为秒。确保每一层有足够的时间冷却。
+   - **Enable cooling fan**：启用冷却风扇。
+
+4. Start/End-Gcode栏
+----------------------
+- **start.gcode**：打印开始 Gcode 配置
+- **end.gcode**：打印结束 Gcode 配置
+- **T0SwitchCode.gcode**：切换为基体头时 Gcode 配置
+- **T1SwitchCode.gcode**：切换为纤维头时 Gcode 配置

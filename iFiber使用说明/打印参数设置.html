@@ -1,0 +1,293 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>打印参数设置 &mdash; abcd 0.1.0 文档</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=d786bb5c"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/translations.js?v=beaddf03"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="prev" title="使用说明" href="%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            abcd
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="搜索文档" aria-label="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+              <p class="caption" role="heading"><span class="caption-text">iFiber使用说明</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="%E7%AE%80%E4%BB%8B.html">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E5%AE%89%E8%A3%85.html">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E.html">使用说明</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">打印参数设置</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#fiber">1. Fiber栏</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#basic">2. Basic栏</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#advanced">3. Advanced栏</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#start-end-gcode">4. Start/End-Gcode栏</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">abcd</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">打印参数设置</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/iFiber使用说明/打印参数设置.rst.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id1">
+<h1>打印参数设置<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
+<section id="fiber">
+<h2>1. Fiber栏<a class="headerlink" href="#fiber" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><dl class="simple">
+<dt><strong>FiberBasic</strong></dt><dd><ul>
+<li><p><strong>Fiber line width (mm)</strong>：纤维打印线宽（通常为1mm）</p></li>
+<li><p><strong>Fiber cut distance (mm)</strong>：纤维剪切长度（取决于剪短位置到喷嘴的距离，在 T300 中为 42mm）</p></li>
+<li><p><strong>Fiber min feed length (mm)</strong>：最小进给长度（当纤维路径长度小于 Fiber min feed length + Fiber cut distance 时，无法打印）</p></li>
+<li><p><strong>Fiber pre extrusion (mm)</strong>：纤维预挤出长度（通常比 Fiber cut distance 大 1mm）</p></li>
+<li><p><strong>Fiber pre extrusion speed (mm/s)</strong>：纤维预挤出速度（通常为 30-50mm/s）</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>FiberSpeedControl</strong></dt><dd><ul>
+<li><p><strong>Fiber feed speed (mm/s)</strong>：主动段纤维打印速度（通常为 5-10mm/s）</p></li>
+<li><p><strong>Fiber drag speed (mm/s)</strong>：被动段纤维打印速度（通常为 Fiber feed speed 的 50%）</p></li>
+<li><p><strong>Fiber slowdown threshold (mm)</strong>：纤维减速段长度</p></li>
+<li><p><strong>Corner speed (mm/s)</strong>：转角速度（通常为 0.5-1mm/s）</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>FiberPrint</strong></dt><dd><ul>
+<li><p><strong>Print fiber first</strong>：纤维打印顺序，勾选后顺序为每层内先打印纤维路径，再打印塑料路径，默认开启</p></li>
+<li><p><strong>Fiber print only</strong>：纯纤维打印设置，勾选后不打印塑料，只打印纤维路径</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>FiberGenerate</strong></dt><dd><ul>
+<li><p><strong>Fiber reinforce method</strong>：纤维增强方式
+- a) None：不加入纤维增强
+- b) Concentric：根据模型轮廓生成纤维增强路径
+- c) Zigzag：生成 Z 字形纤维增强路径
+- d) Line：生成线形纤维增强路径
+- e) Custom：导入自定义纤维路径</p></li>
+<li><p><strong>Fiber reinforce list</strong>：纤维增强层设置（例：要在 5-10 层加入纤维，将该参数设置为 5,10）</p></li>
+<li><p><strong>Fiber reinforce interval</strong>：纤维间隔增强，设置为 0 时，每个增强层均加入纤维，设置为 1 时，纤维层和塑料层交替出现</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>FiberIroning</strong></dt><dd><ul>
+<li><p><strong>Fiber ironing method</strong>：纤维熨烫方法
+- a) None：不加入纤维增强
+- b) Follow：根据模型轮廓生成纤维增强路径
+- c) Line：生成 Z 字形纤维增强路径
+- d) Seam：生成线形纤维增强路径
+- e) Custom：尚未实现</p></li>
+<li><p><strong>Fiber ironing speed (mm/s)</strong>：熨烫速度</p></li>
+<li><p><strong>Fiber ironing zoffset (mm)</strong>：首层熨烫高度改变。如当为 0.025，熨烫层从 0.125，0.25，0.375 变为 0.1，0.225，0.35</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="basic">
+<h2>2. Basic栏<a class="headerlink" href="#basic" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><dl class="simple">
+<dt><strong>FiberIroning</strong></dt><dd><ul>
+<li><p><strong>Layer height (mm)</strong>：层厚</p></li>
+<li><p><strong>Shell thickness (mm)</strong>：壁厚，建议为喷嘴直径的整数倍（1、2、3）</p></li>
+<li><p><strong>Enable retraction</strong>：回抽功能。回抽可以减少打印时的拉丝现象。</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Fill</strong></dt><dd><ul>
+<li><p><strong>Bottom/Top thickness (mm)</strong>：端面厚度。通常为层厚的整数倍。</p></li>
+<li><p><strong>Fill Density (%)</strong>：内部填充的密度。通常为 40。</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Speed</strong></dt><dd><ul>
+<li><p><strong>Print speed (mm/s)</strong>：打印头的移动速度。</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Temperature</strong></dt><dd><ul>
+<li><p><strong>Plastic nozzle temperature (C)</strong>：塑料喷嘴的温度。</p></li>
+<li><p><strong>Fiber nozzle temperature (C)</strong>：纤维喷嘴的温度。</p></li>
+<li><p><strong>Bed temperature (C)</strong>：打印床的温度。</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Support</strong></dt><dd><ul>
+<li><p><strong>Support type</strong>：Everywhere - 这表示在整个打印对象上生成支撑结构，以帮助悬空部分的打印。</p></li>
+<li><p><strong>Platform adhesion type</strong>
+- a) None：生成 Skirt。Skirt 是一种在对象周围打印的轮廓线，用于帮助挤出机稳定和清洁喷嘴。
+- b) Brim：边缘。它在对象周围添加一层单层厚的平坦区域，这个区域在打印完成后易于切除。
+- c) Raft：在对象下方底座。</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Filament</strong></dt><dd><ul>
+<li><p><strong>Diameter (mm)</strong>：打印材料的直径。</p></li>
+<li><p><strong>Flow (%)</strong>：材料挤出量的百分比。通常为 100。</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Machine</strong></dt><dd><ul>
+<li><p><strong>Nozzle size (mm)</strong>：塑料喷嘴的直径。</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="advanced">
+<h2>3. Advanced栏<a class="headerlink" href="#advanced" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><dl class="simple">
+<dt><strong>Retraction</strong></dt><dd><ul>
+<li><p><strong>Speed (mm/s)</strong>：回抽速度。</p></li>
+<li><p><strong>Distance (mm)</strong>：回抽距离。这是打印头在回抽时拉回的材料长度。</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Quality</strong></dt><dd><ul>
+<li><p><strong>Initial layer thickness (mm)</strong>：第一层的厚度。</p></li>
+<li><p><strong>Initial layer line width (%)</strong>：第一次的密度。通常为 100。</p></li>
+<li><p><strong>Cut off object bottom (mm)</strong>：物体底部切除厚度。将对象下沉到平台中，这个功能可以用于那些底部不平整的对象，从而避免因底部接触面积过小而导致的打印问题。</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Speed</strong></dt><dd><ul>
+<li><p><strong>Travel speed (mm/s)</strong>：空驶速度。这是打印头在不挤出材料时的移动速度。</p></li>
+<li><p><strong>Bottom layer speed (mm/s)</strong>：底层打印速度，单位为毫米每秒。</p></li>
+<li><p><strong>Infill speed (mm/s)</strong>：填充速度。这是打印对象内部填充部分的打印速度。</p></li>
+<li><p><strong>Top/bottom speed (mm/s)</strong>：顶部和底部的打印速度。</p></li>
+<li><p><strong>Outer shell speed (mm/s)</strong>：外壁的打印速度。</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Cooling</strong></dt><dd><ul>
+<li><p><strong>Minimal layer time (sec)</strong>：7 - 这是打印每一层所需的最短时间，单位为秒。确保每一层有足够的时间冷却。</p></li>
+<li><p><strong>Enable cooling fan</strong>：启用冷却风扇。</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="start-end-gcode">
+<h2>4. Start/End-Gcode栏<a class="headerlink" href="#start-end-gcode" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>start.gcode</strong>：打印开始 Gcode 配置</p></li>
+<li><p><strong>end.gcode</strong>：打印结束 Gcode 配置</p></li>
+<li><p><strong>T0SwitchCode.gcode</strong>：切换为基体头时 Gcode 配置</p></li>
+<li><p><strong>T1SwitchCode.gcode</strong>：切换为纤维头时 Gcode 配置</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E.html" class="btn btn-neutral float-left" title="使用说明" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2024, ldx。</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
