@@ -1,0 +1,38 @@
+name: Build and Deploy Sphinx Documentation
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+
+    - name: Build Sphinx documentation
+      run: |
+        make html    # 生成 HTML 格式的文档
+
+    - name: Add .nojekyll to prevent Jekyll processing
+      run: |
+        touch build/html/.nojekyll  # 在 _build/html 目录下创建 .nojekyll 文件
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: build/html
+        publish_branch: gh_docs  # 指定推送到 gh-pages 分支
